@@ -6,6 +6,5 @@
     "noEmit": true,
     "allowJs": true
   },
-  "include": ["packages", "stacks", ".eslintrc.cjs", "./sst.config.ts"],
-  "exclude": ["**/sst-env.d.ts"]
+  "include": ["packages/**/src", "stacks", ".eslintrc.cjs", "./sst.config.ts"]
 }

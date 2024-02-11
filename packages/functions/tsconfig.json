@@ -5,7 +5,7 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@sst-notes/core/*": ["../core/src/*"]
+      "@notes/core/*": ["../core/src/*"]
     }
   }
 }
