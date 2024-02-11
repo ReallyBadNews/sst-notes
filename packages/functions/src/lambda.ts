@@ -3,6 +3,7 @@ import { Time } from "@sst-notes/core/time";
 
 export const handler = ApiHandler(async (_evt) => {
   return {
-    body: `Hello world. The time is ${Time.now()}`,
+    statusCode: 200,
+    body: JSON.stringify(`Hi from SST ${Time.now()}`),
   };
 });
