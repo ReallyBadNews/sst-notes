@@ -12,7 +12,10 @@ export const main = handler(async (event) => {
     // 'ExpressionAttributeValues' defines the value in the condition
     // - ':userId': defines 'userId' to be the id of the author
     ExpressionAttributeValues: {
-      ":userId": "123",
+      ":userId":
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        event.requestContext.authorizer?.iam.cognitoIdentity
+          .identityId as string,
     },
   };
 

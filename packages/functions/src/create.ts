@@ -17,7 +17,9 @@ export const main = handler(async (event) => {
     TableName: Table.Notes.tableName,
     Item: {
       // The attributes of the item to be created
-      userId: "123", // The id of the author
+      // eslint-disable-next-line  @typescript-eslint/no-unsafe-member-access
+      userId: event.requestContext.authorizer?.iam.cognitoIdentity
+        .identityId as string, // The id of the author
       noteId: uuid.v1(), // A unique uuid
       content: data.content, // Parsed from request body
       attachment: data.attachment, // Parsed from request body

@@ -6,7 +6,9 @@ export const main = handler(async (event) => {
   const params = {
     TableName: Table.Notes.tableName,
     Key: {
-      userId: "123", // The id of the author
+      // eslint-disable-next-line  @typescript-eslint/no-unsafe-member-access
+      userId: event.requestContext.authorizer?.iam.cognitoIdentity
+        .identityId as string, // The id of the author
       noteId: event?.pathParameters?.id, // The id of the note from the path
     },
   };
