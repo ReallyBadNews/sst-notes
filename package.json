@@ -12,7 +12,8 @@
     "console": "sst console",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext .ts,tsx,js,jsx",
-    "lint:fix": "eslint . --ext .ts,tsx,js,jsx --fix"
+    "lint:fix": "eslint . --ext .ts,tsx,js,jsx --fix",
+    "test": "sst bind vitest run"
   },
   "devDependencies": {
     "@tsconfig/node16": "^16.1.1",
@@ -22,7 +23,8 @@
     "constructs": "10.3.0",
     "eslint": "^8.56.0",
     "sst": "^2.40.3",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.2"
   },
   "workspaces": [
     "packages/*"
