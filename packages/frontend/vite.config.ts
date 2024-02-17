@@ -3,5 +3,14 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  plugins: [remix(), tsconfigPaths()],
+  plugins: [
+    remix({
+      serverModuleFormat: "esm",
+      assetsBuildDirectory: "build/public",
+      publicPath: "/build/public/",
+      serverBuildDirectory: "build",
+      serverBuildFile: "index.js",
+    }),
+    tsconfigPaths(),
+  ],
 });

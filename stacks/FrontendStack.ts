@@ -10,7 +10,6 @@ export function FrontendStack({ stack, app }: StackContext) {
 
   const site = new RemixSite(stack, "RemixSite", {
     path: "packages/frontend",
-    buildCommand: "pnpm run build",
     environment: {
       VITE_API_URL: api.url,
       VITE_REGION: app.region,
