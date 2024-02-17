@@ -19,11 +19,13 @@ export default function handler(
 
     // Return HTTP response, with content type and status code
     return {
-      headers: {
-        "Content-Type": "application/json",
-      },
       body,
       statusCode,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": "true",
+        "Content-Type": "application/json",
+      },
     };
   };
 }
